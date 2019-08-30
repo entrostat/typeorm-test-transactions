@@ -57,3 +57,7 @@ describe('Feature1Test', () => {
 });
 
 ```
+
+## Troubleshooting
+
+- There are some cases when the transactions don't roll back. So far, I've found the reason for that to be that the `typeorm` connection was started before this package was initialised.
