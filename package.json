@@ -28,7 +28,9 @@
     "homepage": "https://github.com/entrostat/typeorm-test-transactions#readme",
     "devDependencies": {
         "prettier": "^1.18.2",
+        "reflect-metadata": "^0.1.13",
         "rimraf": "^3.0.0",
+        "typeorm": "^0.2.18",
         "typescript": "^3.6.2"
     }
 }
