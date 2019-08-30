@@ -2,7 +2,8 @@
     "name": "typeorm-test-transactions",
     "version": "0.0.0",
     "description": "A transactional wrapper for tests that use TypeORM that automatically rolls back the transaction at the end of the test.",
-    "main": "src/index.ts",
+    "main": "dist/index",
+    "types": "dist/index",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "rimraf dist && tsc",
@@ -32,5 +33,8 @@
         "rimraf": "^3.0.0",
         "typeorm": "^0.2.18",
         "typescript": "^3.6.2"
+    },
+    "dependencies": {
+        "typeorm-transactional-cls-hooked": "^0.1.8"
     }
 }
