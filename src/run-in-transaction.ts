@@ -2,7 +2,7 @@ import { Transactional } from 'typeorm-transactional-cls-hooked';
 
 export type RunFunction = () => Promise<void> | void;
 
-export async function runInTransaction(func: RunFunction) {
+export function runInTransaction(func: RunFunction) {
     return async () => {
         try {
             await TransactionCreator.run(func);
