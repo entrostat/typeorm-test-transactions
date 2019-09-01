@@ -25,13 +25,6 @@ npm install --save typeorm-test-transactions
 npm install --save typeorm reflect-metadata
 ```
 
-
-To bring it into your project you'll need to import the module and initialise it before use,
-```typescript
-import * as TypeOrmTestTransactions from 'typeorm-test-transactions';
-TypeOrmTestTransactions.initialise();
-```
-
 When running your tests (I'm using `jest` as the example), you'll want to wrap your test functions in the `runInTransaction` function.
 
 ```typescript
