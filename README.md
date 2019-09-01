@@ -25,11 +25,12 @@ npm install --save typeorm-test-transactions
 npm install --save typeorm reflect-metadata
 ```
 
-When running your tests (I'm using `jest` as the example), you'll want to wrap your test functions in the `runInTransaction` function.
+When running your tests (I'm using `jest` and `nestjs` as the example), you'll want to wrap your test functions in the `runInTransaction` function.
 
 ```typescript
 import { runInTransaction, initialiseTestTransactions } from 'typeorm-test-transactions';
 import { DatabaseModule } from '@modules/database/database.module';
+import { Test } from '@nestjs/testing';
 
 initialiseTestTransactions();
 
@@ -38,7 +39,7 @@ describe('Feature1Test', () => {
     beforeEach(async () => {
         const module = await Test.createTestingModule({
             imports: [DatabaseModule],
-          }).compile();
+        }).compile();
     });
 
     describe('creation', () => {
