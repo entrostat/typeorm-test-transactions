@@ -35,9 +35,18 @@ TypeOrmTestTransactions.initialise();
 When running your tests (I'm using `jest` as the example), you'll want to wrap your test functions in the `runInTransaction` function.
 
 ```typescript
-import { runInTransaction } from 'typeorm-test-transactions';
+import { runInTransaction, initialiseTestTransactions } from 'typeorm-test-transactions';
+import { DatabaseModule } from '@modules/database/database.module';
+
+initialiseTestTransactions();
 
 describe('Feature1Test', () => {
+
+    beforeEach(async () => {
+        const module = await Test.createTestingModule({
+            imports: [DatabaseModule],
+          }).compile();
+    });
 
     describe('creation', () => {
         it('should allow me to create multiple users if the email address is different but name is the same', runInTransaction(async () => {
