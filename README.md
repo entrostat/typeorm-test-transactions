@@ -67,7 +67,7 @@ describe('Feature1Test', () => {
 
 
     describe('creation of one of the users in previous step', () => {
-        it('should allow me to create multiple users if the email address is different but name is the same', runInTransaction(async () => {
+        it('should allow me to create a user that is the same as the one in the previous step', runInTransaction(async () => {
             await User.create({
                 email: 'email1@test.com',
                 name: 'Name'
