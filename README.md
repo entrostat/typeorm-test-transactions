@@ -49,7 +49,7 @@ describe('Feature1Test', () => {
         }).compile();
     });
 
-    describe('creation', () => {
+    describe('creation of 2 users', () => {
         it('should allow me to create multiple users if the email address is different but name is the same', runInTransaction(async () => {
             await User.create({
                 email: 'email1@test.com',
@@ -64,6 +64,19 @@ describe('Feature1Test', () => {
             expect(await User.count()).toEqual(2);
         }));
     });
+
+
+    describe('creation of one of the users in previous step', () => {
+        it('should allow me to create multiple users if the email address is different but name is the same', runInTransaction(async () => {
+            await User.create({
+                email: 'email1@test.com',
+                name: 'Name'
+            }).save();
+ 
+            expect(await User.count()).toEqual(1);
+        }));
+    });
+
 });
 
 ```
