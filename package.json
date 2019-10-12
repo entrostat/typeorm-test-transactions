@@ -8,7 +8,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "rimraf dist && tsc",
         "prepublish": "git checkout master && npm run build",
-        "release": "standard-version"
+        "release": "standard-version --sign"
     },
     "repository": {
         "type": "git",
@@ -39,5 +39,10 @@
     },
     "dependencies": {
         "typeorm-transactional-cls-hooked": "^0.1.8"
+    },
+    "standard-version": {
+        "skip": {
+            "tag": true
+        }
     }
 }
