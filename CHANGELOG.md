@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/entrostat/typeorm-test-transactions/compare/v1.2.1...v1.2.3) (2019-10-12)
+
+
+### Bug Fixes
+
+* **exports:** aliased the functions so they use the same code ([9fe43a6](https://github.com/entrostat/typeorm-test-transactions/commit/9fe43a648c3a0c57899d32a76fb7c7f5d9581018))
+
 ### [1.2.2](https://github.com/entrostat/typeorm-test-transactions/compare/v1.2.1...v1.2.2) (2019-10-12)
 
 
