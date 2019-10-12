@@ -12,14 +12,6 @@ export function runInTransaction(func: RunFunction) {
     };
 }
 
-export async function run(func: RunFunction) {
-    try {
-        await TransactionCreator.run(func);
-    } catch (e) {
-        // Do nothing here, the transaction has now been rolled back.
-    }
-}
-
 class TransactionCreator {
     @Transactional()
     static async run(func: RunFunction) {

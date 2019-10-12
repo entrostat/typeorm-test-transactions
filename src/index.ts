@@ -1,5 +1,5 @@
 import { initialiseTestTransactions } from './initialise';
-import { RunFunction, runInTransaction, run } from './run-in-transaction';
+import { RunFunction, runInTransaction } from './run-in-transaction';
 
 
-export { initialiseTestTransactions, RunFunction, runInTransaction, run };
+export { initialiseTestTransactions, RunFunction, runInTransaction, runInTransaction as run };
