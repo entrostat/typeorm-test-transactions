@@ -84,3 +84,4 @@ describe('Feature1Test', () => {
 ## Troubleshooting
 
 - There are some cases when the transactions don't roll back. So far, I've found the reason for that to be that the `typeorm` connection was started before this package was initialised.
+- I have seen an issue opened [typeorm-transactional-cls-hooked initialization #30](https://github.com/odavid/typeorm-transactional-cls-hooked/issues/30) where there may be a problem around where you perform the initialisation. Once I get feedback, I'll update the documentation here.
