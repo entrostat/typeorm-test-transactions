@@ -1,6 +1,6 @@
 import { User } from './entities/user.entity';
-import { initialiseTestDatabase } from './index';
 import { Connection, QueryFailedError } from 'typeorm';
+import { initialiseTestDatabase } from './initialise-test-database';
 
 describe('entity creation', () => {
     let connection: Connection = null;
