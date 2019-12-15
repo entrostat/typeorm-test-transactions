@@ -13,7 +13,6 @@ describe('entity creation', () => {
         await connection.close();
     });
 
-
     it('allows for an entity to be created', async () => {
         const email = 'entitycreation@gmail.com';
         const user = User.create({ email });
@@ -21,7 +20,7 @@ describe('entity creation', () => {
         await user.save();
 
         const found = await User.findOne({
-            where: { email }
+            where: { email },
         });
 
         expect(found).toBeDefined();
@@ -34,7 +33,7 @@ describe('entity creation', () => {
         await user.save();
 
         const found = await User.findOne({
-            where: { email }
+            where: { email },
         });
 
         expect(found).toBeDefined();

@@ -8,7 +8,7 @@ export function runInTransaction(func: RunFunction) {
         try {
             await TransactionCreator.run(func);
         } catch (e) {
-            if(e instanceof RollbackErrorException) {
+            if (e instanceof RollbackErrorException) {
                 // Do nothing here, the transaction has now been rolled back.
             } else {
                 throw e;
@@ -23,6 +23,8 @@ class TransactionCreator {
         await func();
         // Once the function has run, we throw an exception to ensure that the
         // transaction rolls back.
-        throw new RollbackErrorException(`This is thrown to cause a rollback on the transaction.`);
+        throw new RollbackErrorException(
+            `This is thrown to cause a rollback on the transaction.`,
+        );
     }
 }
