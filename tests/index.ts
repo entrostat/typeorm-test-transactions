@@ -1,3 +1,3 @@
 import { initialiseTestDatabase } from './initialise-test-database';
 
-initialiseTestDatabase();
+initialiseTestDatabase().then(() => process.exit(0));
