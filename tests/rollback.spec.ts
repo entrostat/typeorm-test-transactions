@@ -14,14 +14,13 @@ describe('rollback tests', () => {
         await connection.close();
     });
 
-
     it('rolls back the creation of an entity if it is wrapped in the transaction function', async () => {
         const email = 'sameuser@gmail.com';
         await runInTransaction(async () => {
             const user = User.create({ email });
             await user.save();
             const found = await User.findOne({
-                where: { email }
+                where: { email },
             });
             expect(found).toBeDefined();
         });
@@ -30,26 +29,25 @@ describe('rollback tests', () => {
             const user = User.create({ email });
             await user.save();
             const found = await User.findOne({
-                where: { email }
+                where: { email },
             });
             expect(found).toBeDefined();
         });
     });
-
 
     it('rolls back multiple inserts', async () => {
         await runInTransaction(async () => {
             let email = 'user1@gmail.com';
             await User.create({ email }).save();
             let found = await User.findOne({
-                where: { email }
+                where: { email },
             });
             expect(found).toBeDefined();
 
             email = 'user2@gmail.com';
             User.create({ email }).save();
             found = await User.findOne({
-                where: { email }
+                where: { email },
             });
             expect(found).toBeDefined();
 
@@ -59,5 +57,5 @@ describe('rollback tests', () => {
         await runInTransaction(async () => {
             expect(await User.count()).toBe(0);
         });
-    })
+    });
 });

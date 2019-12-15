@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.1](https://github.com/entrostat/typeorm-test-transactions/compare/v1.8.0...v1.8.1) (2019-12-15)
+
+
+### Bug Fixes
+
+* **formatting:** ran prettier on code ([8b5dc71](https://github.com/entrostat/typeorm-test-transactions/commit/8b5dc7165c80214fa9bdacce163395a475f465db))
+
 ## [1.8.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.7.1...v1.8.0) (2019-12-15)
 
 
