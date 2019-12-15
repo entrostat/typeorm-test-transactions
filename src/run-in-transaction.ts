@@ -1,5 +1,5 @@
 import { Transactional } from 'typeorm-transactional-cls-hooked';
-import { RollbackError } from './exception/RollbackError';
+import { RollbackErrorException } from './exceptions/rollback-error-exception';
 
 export type RunFunction = () => Promise<void> | void;
 
@@ -8,7 +8,7 @@ export function runInTransaction(func: RunFunction) {
         try {
             await TransactionCreator.run(func);
         } catch (e) {
-            if(e instanceof RollbackError) {
+            if(e instanceof RollbackErrorException) {
                 // Do nothing here, the transaction has now been rolled back.
             } else {
                 throw e;
@@ -20,11 +20,9 @@ export function runInTransaction(func: RunFunction) {
 class TransactionCreator {
     @Transactional()
     static async run(func: RunFunction) {
-        try {
-            await func();
-        } catch(e) {
-            throw e;
-        }
-        throw new RollbackError(`This is thrown to cause a rollback on the transaction.`);
+        await func();
+        // Once the function has run, we throw an exception to ensure that the
+        // transaction rolls back.
+        throw new RollbackErrorException(`This is thrown to cause a rollback on the transaction.`);
     }
 }
