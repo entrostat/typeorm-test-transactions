@@ -19,6 +19,19 @@ Before I start, I did not add much to get this to work. The major reason why thi
 I haven't been able to test this library extensively. At the moment, I know it works for entities that extend `BaseEntity` in `TypeORM`. Over time, verifications will be done on other methods.
 
 
+## Testing
+
+Currently, I have created a small test suite that tests that there is a rollback in the transaction wrapper. The goal is to test as many database versions as possible, currently I have:
+
+ - MySQL 5.7
+ - Postgres 9
+ - Postgres 10
+ - Postgres 11
+ - Postgres 12
+
+The test badge represents tests that run over these databases: [![Build Status](https://travis-ci.org/entrostat/typeorm-test-transactions.svg?branch=develop)](https://travis-ci.org/entrostat/typeorm-test-transactions)
+
+
 ## Getting Started
 
 In order to use this project you need to install the package,
