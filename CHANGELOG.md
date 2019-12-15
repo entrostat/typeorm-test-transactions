@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.5.0...v1.6.0) (2019-12-15)
+
+
+### Features
+
+* **testing:** added travis-ci testing to the project so that we can test different databases ([4874a76](https://github.com/entrostat/typeorm-test-transactions/commit/4874a761922e50b62c8013c04a63eae20a708048))
+
 ## [1.5.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.2.3...v1.5.0) (2019-12-15)
 
 
