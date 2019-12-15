@@ -1,0 +1,9 @@
+POSTGRES_PASSWORD=transactions
+POSTGRES_USER=transactions
+POSTGRES_DB=transactions
+
+DB_USERNAME=transactions
+DB_PASSWORD=transactions
+DB_DATABASE=transactions
+DB_HOST=database
+DB_PORT=5432
