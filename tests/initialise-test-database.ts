@@ -14,8 +14,19 @@ export async function initialiseTestDatabase() {
             synchronize: true,
             dropSchema: process.env.DB_INIT,
             logging: false,
-        };
+        } as any;
 
+        switch (process.env.DB_TYPE) {
+            case 'mysql':
+                connectionConfig.extra = {
+                    insecureAuth: true,
+                };
+                break;
+            default:
+                break;
+        }
+
+        console.log(connectionConfig);
         createConnection(connectionConfig as any)
             .then(connection => {
                 // here you can start to work with your entities
