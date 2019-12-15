@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.1](https://github.com/entrostat/typeorm-test-transactions/compare/v1.7.0...v1.7.1) (2019-12-15)
+
+
+### Bug Fixes
+
+* **build:** exclude tests from tsc build ([5271325](https://github.com/entrostat/typeorm-test-transactions/commit/52713256bf037ce81f5fb65853e8a444789504a4))
+
 ## [1.7.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.6.0...v1.7.0) (2019-12-15)
 
 
