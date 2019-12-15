@@ -31,4 +31,4 @@ export async function initialiseTestDatabase() {
 }
 
 
-initialiseTestDatabase();
+initialiseTestDatabase().then(() => process.exit(0));
