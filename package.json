@@ -5,7 +5,7 @@
     "main": "dist/index",
     "types": "dist/index",
     "scripts": {
-        "pretest": "DB_INIT=1 ts-node tests/index.ts",
+        "pretest": "sleep 10; DB_INIT=1 ts-node tests/index.ts",
         "test": "jest --forceExit",
         "build": "rimraf dist && tsc",
         "prepublish": "git checkout master && npm run build",
