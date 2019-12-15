@@ -1,6 +1,7 @@
 import { User } from './entities/user.entity';
 import { initialiseTestDatabase } from './index';
 import { Connection } from 'typeorm';
+import { runInTransaction } from '../src';
 
 describe('rollback tests', () => {
     let connection: Connection = null;
@@ -15,6 +16,48 @@ describe('rollback tests', () => {
 
 
     it('rolls back the creation of an entity if it is wrapped in the transaction function', async () => {
-        expect(true).toBe(true);
+        const email = 'sameuser@gmail.com';
+        await runInTransaction(async () => {
+            const user = User.create({ email });
+            await user.save();
+            const found = await User.findOne({
+                where: { email }
+            });
+            expect(found).toBeDefined();
+        });
+
+        await runInTransaction(async () => {
+            const user = User.create({ email });
+            await user.save();
+            const found = await User.findOne({
+                where: { email }
+            });
+            expect(found).toBeDefined();
+        });
+    });
+
+
+    it('rolls back multiple inserts', async () => {
+        await runInTransaction(async () => {
+            let email = 'user1@gmail.com';
+            await User.create({ email }).save();
+            let found = await User.findOne({
+                where: { email }
+            });
+            expect(found).toBeDefined();
+
+            email = 'user2@gmail.com';
+            User.create({ email }).save();
+            found = await User.findOne({
+                where: { email }
+            });
+            expect(found).toBeDefined();
+
+            expect(await User.count()).toBe(2);
+        });
+
+        await runInTransaction(async () => {
+            expect(await User.count()).toBe(0);
+        });
     })
 });
