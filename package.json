@@ -1,6 +1,6 @@
 {
     "name": "typeorm-test-transactions",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "description": "A transactional wrapper for tests that use TypeORM that automatically rolls back the transaction at the end of the test.",
     "main": "dist/index",
     "types": "dist/index",
@@ -8,7 +8,8 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "rimraf dist && tsc",
         "prepublish": "git checkout master && npm run build",
-        "release": "standard-version --sign"
+        "release": "standard-version --sign",
+        "release:dry-run": "standard-version --dry-run"
     },
     "repository": {
         "type": "git",
@@ -42,7 +43,7 @@
     },
     "standard-version": {
         "skip": {
-            "tag": true
+            "tag": false
         }
     }
 }
