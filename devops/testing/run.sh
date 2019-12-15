@@ -21,3 +21,6 @@ echo "Postgres 12"
 cd $ROOT/postgres-12
 docker-compose up --abort-on-container-exit
 
+echo "MySQL 8"
+cd $ROOT/mysql-8
+docker-compose up --abort-on-container-exit
