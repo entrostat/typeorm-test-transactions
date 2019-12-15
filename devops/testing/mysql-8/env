@@ -1,4 +1,5 @@
 MYSQL_PASSWORD=transactions
+MYSQL_ROOT_PASSWORD=transactions
 MYSQL_USER=transactions
 MYSQL_DATABASE=transactions
 
