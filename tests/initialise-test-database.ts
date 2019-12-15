@@ -14,7 +14,7 @@ export async function initialiseTestDatabase() {
             entities: [
                 User,
             ],
-            synchronize: true,
+            synchronize: false,
             dropSchema: process.env.DB_INIT,
             logging: false,
         };
