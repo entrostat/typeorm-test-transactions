@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.7.1...v1.8.0) (2019-12-15)
+
+
+### Features
+
+* **testing:** added testing for postgres 9 ([ab09273](https://github.com/entrostat/typeorm-test-transactions/commit/ab09273d2c41b19b08943fa87337345660e7edb9))
+* **testing:** added tests for postgres 10 ([d14baef](https://github.com/entrostat/typeorm-test-transactions/commit/d14baefda4e60d396e09ae821cb7283f4293883b))
+
 ### [1.7.1](https://github.com/entrostat/typeorm-test-transactions/compare/v1.7.0...v1.7.1) (2019-12-15)
 
 
