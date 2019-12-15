@@ -5,7 +5,8 @@
     "main": "dist/index",
     "types": "dist/index",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "pretest": "DB_INIT=1 ts-node tests/index.ts",
+        "test": "jest --forceExit",
         "build": "rimraf dist && tsc",
         "prepublish": "git checkout master && npm run build",
         "release": "standard-version --sign",
@@ -30,11 +31,16 @@
     },
     "homepage": "https://github.com/entrostat/typeorm-test-transactions#readme",
     "devDependencies": {
-        "@types/node": "^12.7.3",
+        "@types/jest": "^24.0.23",
+        "@types/node": "^12.12.17",
+        "jest": "^24.9.0",
+        "pg": "^7.14.0",
         "prettier": "^1.18.2",
         "reflect-metadata": "^0.1.13",
         "rimraf": "^3.0.0",
         "standard-version": "^7.0.0",
+        "ts-jest": "^24.2.0",
+        "ts-node": "^8.5.4",
         "typeorm": "^0.2.18",
         "typescript": "^3.6.2"
     },
