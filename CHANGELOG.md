@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.2.3...v1.4.0) (2019-12-15)
+
+
+### Features
+
+* divide error case to support test that used the supertest module ([b5319e1](https://github.com/entrostat/typeorm-test-transactions/commit/b5319e14d9e635b8607f45f26639f2294d424b3d))
+
+
+### Bug Fixes
+
+* **convention:** named the files to fit convention ([ab76b7d](https://github.com/entrostat/typeorm-test-transactions/commit/ab76b7dd976d78ab0864c3f20dd9760d01dca78f))
+* **convetion:** named the files to fit convention ([d2c8d43](https://github.com/entrostat/typeorm-test-transactions/commit/d2c8d4357460430764d0358bdd2f81c17bf16890))
+* **exception:** only catch certain exceptions in the transaction wrapper so that other exceptions are not caught ([3f756df](https://github.com/entrostat/typeorm-test-transactions/commit/3f756dfb27ec180556aa94810e969a48e24c17a7))
+
 ## [1.3.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.2.3...v1.3.0) (2019-11-27)
 
 
