@@ -22,6 +22,9 @@ export async function initialiseTestDatabase() {
 
         createConnection(connectionConfig as any).then(connection => {
             // here you can start to work with your entities
+            if (process.env.DB_INIT) {
+                console.log(`Database initialised...`);
+            }
             resolve(connection);
         }).catch(error => reject(error));
     });
