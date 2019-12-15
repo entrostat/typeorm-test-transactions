@@ -1,3 +1,6 @@
 #!/bin/bash
+set -x
 
-cd postgres-11 && docker-compose up
+echo "Testing Postgres 11"
+cd postgres-11
+docker-compose up
