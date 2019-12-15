@@ -1,11 +1,11 @@
 {
     "name": "typeorm-test-transactions",
-    "version": "1.8.1",
+    "version": "1.9.0",
     "description": "A transactional wrapper for tests that use TypeORM that automatically rolls back the transaction at the end of the test.",
     "main": "dist/index",
     "types": "dist/index",
     "scripts": {
-        "pretest": "DB_INIT=1 ts-node tests/index.ts",
+        "pretest": "sleep 10; DB_INIT=1 ts-node tests/index.ts",
         "test": "jest --forceExit",
         "build": "rimraf dist && tsc",
         "prepublish": "git checkout master && npm run build",
@@ -34,6 +34,7 @@
         "@types/jest": "^24.0.23",
         "@types/node": "^12.12.17",
         "jest": "^24.9.0",
+        "mysql": "^2.17.1",
         "pg": "^7.14.0",
         "prettier": "^1.19.1",
         "reflect-metadata": "^0.1.13",

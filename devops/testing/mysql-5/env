@@ -1,0 +1,12 @@
+MYSQL_PASSWORD=transactions
+MYSQL_ALLOW_EMPTY_PASSWORD=1
+MYSQL_USER=transactions
+MYSQL_DATABASE=transactions
+
+DB_USERNAME=transactions
+DB_PASSWORD=transactions
+DB_DATABASE=transactions
+DB_HOST=database
+DB_PORT=3306
+
+DB_TYPE=mysql

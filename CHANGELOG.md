@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.8.1...v1.9.0) (2019-12-15)
+
+
+### Features
+
+* **testing:** added tests for mysql 5.7 ([5d10190](https://github.com/entrostat/typeorm-test-transactions/commit/5d10190bf28f7b7534ea19c4861547bb8eec237b))
+
 ### [1.8.1](https://github.com/entrostat/typeorm-test-transactions/compare/v1.8.0...v1.8.1) (2019-12-15)
 
 
