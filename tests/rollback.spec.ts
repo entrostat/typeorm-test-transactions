@@ -1,7 +1,9 @@
 import { User } from './entities/user.entity';
 import { Connection } from 'typeorm';
-import { runInTransaction } from '../src';
+import { runInTransaction, initialiseTestTransactions } from '../src';
 import { initialiseTestDatabase } from './initialise-test-database';
+
+initialiseTestTransactions();
 
 describe('rollback tests', () => {
     let connection: Connection = null;
