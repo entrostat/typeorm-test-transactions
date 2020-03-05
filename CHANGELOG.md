@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.1](https://github.com/entrostat/typeorm-test-transactions/compare/v1.9.0...v1.9.1) (2020-03-05)
+
+
+### Bug Fixes
+
+* **testing:** I wasn't importing the initialise function (which I was doing in the docs) ([517f54d](https://github.com/entrostat/typeorm-test-transactions/commit/517f54df57136d511369a2fbc36d916b1cabcd67))
+
 ## [1.9.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.8.1...v1.9.0) (2019-12-15)
 
 
