@@ -3,6 +3,12 @@ import { Connection } from 'typeorm';
 import { runInTransaction, initialiseTestTransactions } from '../src';
 import { initialiseTestDatabase } from './initialise-test-database';
 
+/**
+ * The point of this file is to show that it still works even
+ * when you initialise for the second time and run similar
+ * (or in my case, the same) tests.
+ */
+
 initialiseTestTransactions();
 
 describe('rollback tests - duplicated', () => {
