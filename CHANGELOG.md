@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.9.1...v1.10.0) (2020-03-05)
+
+
+### Features
+
+* **testing:** added a second test file to test any init problems ([181f542](https://github.com/entrostat/typeorm-test-transactions/commit/181f542d94d942fc644818120e41dfdb45d199ad)), closes [#8](https://github.com/entrostat/typeorm-test-transactions/issues/8)
+
 ### [1.9.1](https://github.com/entrostat/typeorm-test-transactions/compare/v1.9.0...v1.9.1) (2020-03-05)
 
 
