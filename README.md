@@ -16,8 +16,7 @@ You may argue that we should mock out the entities and not use a database at all
 Before I start, I did not add much to get this to work. The major reason why this is possible is because of the work done by [odavid](https://github.com/odavid) in his [typeorm-transactional-cls-hooked](https://github.com/odavid/typeorm-transactional-cls-hooked) library. Thanks for the great work  [odavid](https://github.com/odavid)!
 
 ## Limitations
-I haven't been able to test this library extensively. At the moment, I know it works for entities that extend `BaseEntity` in `TypeORM`. Over time, verifications will be done on other methods.
-
+It has come to my attention that this library is **not** consistent if you use the `TypeORM` entity manager. So you'll want to use `typeorm-transactional-cls-hooked` to add the `@Transactional` decorator above function calls and those transactions will work correctly. What a colleague has found is that, when you use a `TypeORM` entity manager, they are independent of each other and data may still write to the database. 
 
 ## Testing
 
