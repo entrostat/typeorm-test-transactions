@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.10.1...v1.11.0) (2020-05-27)
+
+
+### Features
+
+* **testing:** added mysql 8 tests ([420223c](https://github.com/entrostat/typeorm-test-transactions/commit/420223c25e652daaef22d1dfadb31a790ebfa6d9)), closes [#11](https://github.com/entrostat/typeorm-test-transactions/issues/11)
+
 ### [1.10.1](https://github.com/entrostat/typeorm-test-transactions/compare/v1.10.0...v1.10.1) (2020-03-24)
 
 ## [1.10.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.9.1...v1.10.0) (2020-03-05)

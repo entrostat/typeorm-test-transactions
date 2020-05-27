@@ -1,0 +1,17 @@
+version: '3.6'
+services:
+    database:
+        image: mysql/mysql-server:8.0
+        command: --default-authentication-plugin=mysql_native_password
+        env_file:
+            - env
+        volumes:
+            - ./my.cnf:/etc/my.cnf
+
+    tests:
+        build:
+            context: $PWD/../../..
+            dockerfile: $PWD/../backend/Dockerfile
+        env_file:
+            - env
+        command: ['run', 'test']
