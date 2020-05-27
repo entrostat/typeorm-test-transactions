@@ -44,6 +44,7 @@ npm install --save typeorm-test-transactions
 # Not removing from the typeorm-transactional-cls-hooked
 # dependency separation. If you don't have the below
 # libraries then you'll need to install them as well
+# See https://github.com/odavid/typeorm-transactional-cls-hooked
 
 npm install --save typeorm reflect-metadata
 ```
