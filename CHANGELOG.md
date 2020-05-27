@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.1](https://github.com/entrostat/typeorm-test-transactions/compare/v1.11.0...v1.11.1) (2020-05-27)
+
+
+### Bug Fixes
+
+* **deps:** updated npm packages ([ff1ef77](https://github.com/entrostat/typeorm-test-transactions/commit/ff1ef778d55abf09245fb193c1797e0ebe430978)), closes [#12](https://github.com/entrostat/typeorm-test-transactions/issues/12)
+
 ## [1.11.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.10.1...v1.11.0) (2020-05-27)
 
 ### Features
