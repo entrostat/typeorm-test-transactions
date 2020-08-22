@@ -28,3 +28,7 @@ docker-compose up --abort-on-container-exit
 echo "MySQL 8"
 cd $ROOT/mysql-8
 docker-compose up --abort-on-container-exit
+
+echo "MariaDB 10"
+cd $ROOT/mariadb-10
+docker-compose up --abort-on-container-exit

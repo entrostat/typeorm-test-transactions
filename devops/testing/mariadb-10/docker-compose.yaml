@@ -1,0 +1,14 @@
+version: '3.6'
+services:
+    database:
+        image: mariadb:10.5
+        env_file:
+            - env
+
+    tests:
+        build:
+            context: $PWD/../../..
+            dockerfile: $PWD/../backend/Dockerfile
+        env_file:
+            - env
+        command: ['run', 'test']
