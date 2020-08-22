@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.13.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.12.1...v1.13.0) (2020-08-22)
+
+
+### Features
+
+* **testing:** added tests for Postgres 13 ([62eb9e2](https://github.com/entrostat/typeorm-test-transactions/commit/62eb9e21925124f65ceca4b8c5200e4ebbdb61d1)), closes [#17](https://github.com/entrostat/typeorm-test-transactions/issues/17)
+
 ### [1.12.1](https://github.com/entrostat/typeorm-test-transactions/compare/v1.12.0...v1.12.1) (2020-08-22)
 
 ## [1.12.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.11.1...v1.12.0) (2020-08-22)
