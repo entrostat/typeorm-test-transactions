@@ -10,6 +10,7 @@
         "build": "rimraf dist && tsc",
         "prepublish": "git checkout master && npm run build",
         "release": "standard-version --sign",
+        "release:no-sign": "standard-version",
         "release:dry-run": "standard-version --dry-run"
     },
     "repository": {
