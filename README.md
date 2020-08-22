@@ -27,6 +27,7 @@ Currently, I have created a small test suite that tests that there is a rollback
 
 -   MySQL 5.7
 -   MySQL 8.0
+-   MariaDB 10
 -   Postgres 9
 -   Postgres 10
 -   Postgres 11
