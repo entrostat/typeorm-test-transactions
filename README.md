@@ -32,6 +32,7 @@ Currently, I have created a small test suite that tests that there is a rollback
 -   Postgres 10
 -   Postgres 11
 -   Postgres 12
+-   Postgres 13
 
 The test badge represents tests that run over these databases: [![Build Status](https://travis-ci.org/entrostat/typeorm-test-transactions.svg?branch=develop)](https://travis-ci.org/entrostat/typeorm-test-transactions)
 
