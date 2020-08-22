@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.11.1...v1.12.0) (2020-08-22)
+
+
+### Features
+
+* **testing:** added tests for mariadb 10 ([ffd3475](https://github.com/entrostat/typeorm-test-transactions/commit/ffd347558d1945fb37d0b2d6515cd1928121e69a)), closes [#15](https://github.com/entrostat/typeorm-test-transactions/issues/15)
+
 ### [1.11.1](https://github.com/entrostat/typeorm-test-transactions/compare/v1.11.0...v1.11.1) (2020-05-27)
 
 
