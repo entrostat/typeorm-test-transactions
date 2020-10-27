@@ -28,13 +28,25 @@ describe('rollback tests', () => {
         });
 
         await runInTransaction(async () => {
+            console.log("create another User ... 2");
+
             const user = User.create({ email });
             await user.save();
             const found = await User.findOne({
                 where: { email },
             });
             expect(found).toBeDefined();
+            expect(false).toBeTruthy();
         });
+    });
+
+    it('never seems to fail', async () => {
+        console.log("log outside runInTransaction");
+        await runInTransaction(async () => {
+            console.log("log inside runInTransaction");
+            expect(false).toBeTruthy();
+        });
+        console.log("log after runInTransaction");
     });
 
     it('rolls back multiple inserts', async () => {
