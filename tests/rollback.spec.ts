@@ -25,7 +25,7 @@ describe('rollback tests', () => {
                 where: { email },
             });
             expect(found).toBeDefined();
-        });
+        })();
 
         await runInTransaction(async () => {
             const user = User.create({ email });
@@ -34,7 +34,7 @@ describe('rollback tests', () => {
                 where: { email },
             });
             expect(found).toBeDefined();
-        });
+        })();
     });
 
     it('rolls back multiple inserts', async () => {
@@ -47,17 +47,16 @@ describe('rollback tests', () => {
             expect(found).toBeDefined();
 
             email = 'user2@gmail.com';
-            User.create({ email }).save();
+            await User.create({ email }).save();
             found = await User.findOne({
                 where: { email },
             });
             expect(found).toBeDefined();
-
             expect(await User.count()).toBe(2);
-        });
+        })();
 
         await runInTransaction(async () => {
             expect(await User.count()).toBe(0);
-        });
+        })();
     });
 });
