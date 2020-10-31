@@ -1,6 +1,9 @@
 import { User } from './entities/user.entity';
 import { Connection, QueryFailedError } from 'typeorm';
 import { initialiseTestDatabase } from './initialise-test-database';
+import { initialiseTestTransactions, runInTransaction } from '../src';
+
+initialiseTestTransactions();
 
 describe('entity creation', () => {
     let connection: Connection = null;
@@ -13,7 +16,7 @@ describe('entity creation', () => {
         await connection.close();
     });
 
-    it('allows for an entity to be created', async () => {
+    it('allows for an entity to be created', runInTransaction(async () => {
         const email = 'entitycreation@gmail.com';
         const user = User.create({ email });
 
@@ -24,9 +27,9 @@ describe('entity creation', () => {
         });
 
         expect(found).toBeDefined();
-    });
+    }));
 
-    it('fails if you try to create two of the same entity', async () => {
+    it('fails if you try to create two of the same entity', runInTransaction(async () => {
         const email = 'uniqueconstraint@gmail.com';
         const user = User.create({ email });
 
@@ -44,5 +47,5 @@ describe('entity creation', () => {
         } catch (e) {
             expect(e instanceof QueryFailedError).toBe(true);
         }
-    });
+    }));
 });

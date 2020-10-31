@@ -105,6 +105,50 @@ describe('Feature1Test', () => {
 });
 ```
 
+**IMPORTANT!** The example above wraps the entire test in a transaction and returns a function that `jest` executes. If you'd like to wrap *parts* of a test in a transaction, you need to **call** the function and `await` the result:
+```typescript
+import {
+    runInTransaction,
+    initialiseTestTransactions,
+} from 'typeorm-test-transactions';
+import { DatabaseModule } from '@modules/database/database.module';
+import { Test } from '@nestjs/testing';
+
+initialiseTestTransactions();
+
+describe('Feature1Test', () => {
+    beforeEach(async () => {
+        const module = await Test.createTestingModule({
+            imports: [DatabaseModule],
+        }).compile();
+    });
+
+    describe('creation of the same user in different sequential transactions', () => {
+        it(
+            'allows me to create the same user twice if they were each in a transaction',
+            async () => {
+                await runInTransaction(async () => {
+                    await User.create({
+                        email: 'email1@test.com',
+                        name: 'Name',
+                    }).save();
+
+                    expect(await User.count()).toEqual(1);
+                })();
+                await runInTransaction(async () => {
+                    await User.create({
+                        email: 'email1@test.com',
+                        name: 'Name',
+                    }).save();
+
+                    expect(await User.count()).toEqual(1);
+                })();
+            }
+        );
+    });
+});
+```
+
 ## Troubleshooting
 
 -   There are some cases when the transactions don't roll back. So far, I've found the reason for that to be that the `typeorm` connection was started before this package was initialised.
