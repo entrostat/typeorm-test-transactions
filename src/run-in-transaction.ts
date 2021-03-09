@@ -26,9 +26,8 @@ export function runInTransaction(func: RunFunction) {
 export function runInTransactionConns(connections: string[], func: RunFunction){
     return async () => {
         if (connections && connections.length != 0) {
-            scope.run(async () => {
+            await scope.runPromise(async () => {
                 scope.set('connections', connections);
-                
                 try {
                     await TransactionCreator.runWithConns(func);
                 } catch (e) {
@@ -72,7 +71,7 @@ class TransactionCreator {
     static async runWithConns(func: RunFunction) {
         let connections: string[] = scope.get('connections');
         if(connections.length != 0) {
-            await TransactionCreator.runWithConn(() => TransactionCreator.runWithConns(func));
+            await TransactionCreator.runWithConn(async () => await TransactionCreator.runWithConns(func));
         } else {
             await TransactionCreator.runWithConn(func);
         }
