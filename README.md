@@ -5,7 +5,7 @@
 [![GitHub version](https://badge.fury.io/gh/entrostat%2Ftypeorm-test-transactions.svg)](https://badge.fury.io/gh/entrostat%2Ftypeorm-test-transactions)
 [![npm version](https://badge.fury.io/js/typeorm-test-transactions.svg)](https://badge.fury.io/js/typeorm-test-transactions)
 <a href="https://github.com/entrostat/typeorm-test-transactions/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/entrostat/typeorm-test-transactions"></a>
-[![Build Status](https://travis-ci.org/entrostat/typeorm-test-transactions.svg?branch=develop)](https://travis-ci.org/entrostat/typeorm-test-transactions)
+![Build Status](https://github.com/entrostat/typeorm-test-transactions/actions/workflows/unit-tests.yaml/badge.svg)
 
 Have you wanted to run tests on a project that uses TypeORM directly on the database and in parallel? A lot of the time we can't do this because artefacts and data from other tests can affect the result of our current tests. What usually happens, in this case, is that our tests become quite complicated when database entities are involved because we need to track exact entities. Our `count()` and other aggregations must have `where` clauses so that we don't see results from other tests that have already completed.
 
@@ -34,7 +34,7 @@ Currently, I have created a small test suite that tests that there is a rollback
 -   Postgres 12
 -   Postgres 13
 
-The test badge represents tests that run over these databases: [![Build Status](https://travis-ci.org/entrostat/typeorm-test-transactions.svg?branch=develop)](https://travis-ci.org/entrostat/typeorm-test-transactions)
+The test badge represents tests that run over these databases: ![Build Status](https://github.com/entrostat/typeorm-test-transactions/actions/workflows/unit-tests.yaml/badge.svg)
 
 ## Getting Started
 

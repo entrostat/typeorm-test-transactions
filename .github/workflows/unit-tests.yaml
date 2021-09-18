@@ -1,0 +1,16 @@
+name: Unit Tests
+
+on:
+    push:
+        branches: [develop, master]
+    pull_request:
+        branches: [develop]
+
+jobs:
+    tests:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Run the Unit Tests
+              run: cd ./devops/testing && ./run.sh
