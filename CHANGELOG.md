@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.14.3](https://github.com/entrostat/typeorm-test-transactions/compare/v1.14.2...v1.14.3) (2021-09-18)
+
+
+### Bug Fixes
+
+* **devops:** Added a Github action to test Postgres 9 ([770e1f7](https://github.com/entrostat/typeorm-test-transactions/commit/770e1f7126008d9283581a5b7c72276a4d46d1c5))
+* **devops:** Removed Travis-CI and plug into the Github Actions for testing ([4474296](https://github.com/entrostat/typeorm-test-transactions/commit/4474296ce6c7e18baf88a2682922c6e216ccae6c))
+
 ### [1.14.2](https://github.com/entrostat/typeorm-test-transactions/compare/v1.14.1...v1.14.2) (2021-01-02)
 
 ### [1.14.1](https://github.com/entrostat/typeorm-test-transactions/compare/v1.14.0...v1.14.1) (2020-10-31)
