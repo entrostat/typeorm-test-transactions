@@ -1,0 +1,16 @@
+name: Unit Tests
+
+on:
+    push:
+        branches: [develop, master]
+    pull_request:
+        branches: [develop]
+
+jobs:
+    postgres-9:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Tests
+              run: cd devops/testing/postgres-9 && docker-compose up --abort-on-container-exit
