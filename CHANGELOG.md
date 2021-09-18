@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/entrostat/typeorm-test-transactions/compare/v2.0.0...v3.0.0) (2021-09-18)
+
+
+### Features
+
+* **nested-transactions:** Added the ability to support multiple connections ([97f8058](https://github.com/entrostat/typeorm-test-transactions/commit/97f8058a98a91b8a834490d38662d95d983ad6c1)), closes [#25](https://github.com/entrostat/typeorm-test-transactions/issues/25)
+
+
+### Bug Fixes
+
+* **formatting:** Changed the formatting and naming of functions to ensure that it's more readable ([24d4075](https://github.com/entrostat/typeorm-test-transactions/commit/24d40750aa7de7b4c10807b819d8b81c1679557a))
+
+## [1.4.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.3.0...v1.4.0) (2019-12-15)
+
+## [1.3.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.2.3...v1.3.0) (2019-11-27)
+
 ## [2.0.0](https://github.com/entrostat/typeorm-test-transactions/compare/v1.14.3...v2.0.0) (2021-09-18)
 
 ### [1.14.3](https://github.com/entrostat/typeorm-test-transactions/compare/v1.14.2...v1.14.3) (2021-09-18)
