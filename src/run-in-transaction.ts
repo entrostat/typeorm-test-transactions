@@ -3,8 +3,13 @@ import { RollbackErrorException } from './exceptions/rollback-error-exception';
 import { createNamespace } from 'cls-hooked';
 
 export type RunFunction = () => Promise<void> | void;
-let scope = createNamespace('recursiveContext');
+const scope = createNamespace('recursiveContext');
 
+/**
+ * Runs the code in a transaction and runs rollback on the transaction at the
+ * end of it.
+ * @param func The function you want run in a transaction
+ */
 export function runInTransaction(func: RunFunction) {
     return async () => {
         try {
@@ -20,16 +25,23 @@ export function runInTransaction(func: RunFunction) {
 }
 
 /**
- * Runs @param func in recursively nested transactions for each connection in @param connections,
- *  starting from right to left.
+ * Runs a function in a nested transaction for each connection specified
+ * @param connections The connections to run the transactions in
+ * @param func The function you want run in a transaction
+ *
+ * Thanks @Dzeri96 for this contribution
+ * https://github.com/Dzeri96/typeorm-test-transactions/tree/nested-transactions
  */
-export function runInTransactionConns(connections: string[], func: RunFunction){
+export function runInMultiConnectionTransaction(
+    connections: string[],
+    func: RunFunction,
+) {
     return async () => {
         if (connections && connections.length != 0) {
             await scope.runPromise(async () => {
                 scope.set('connections', connections);
                 try {
-                    await TransactionCreator.runWithConns(func);
+                    await TransactionCreator.runWithMultipleConnections(func);
                 } catch (e) {
                     if (e instanceof RollbackErrorException) {
                         // Do nothing here, the transaction has now been rolled back.
@@ -37,14 +49,11 @@ export function runInTransactionConns(connections: string[], func: RunFunction){
                         throw e;
                     }
                 }
-                
             });
         } else {
-            throw 'Connection array is empty. Consider using runInTransaction() instead.'
+            throw 'Connection array is empty. Consider using runInTransaction() instead.';
         }
-        
     };
-    
 }
 
 class TransactionCreator {
@@ -58,8 +67,11 @@ class TransactionCreator {
         );
     }
 
-    @Transactional({connectionName: () => scope.get('connections').pop(), propagation: Propagation.NESTED})
-    static async runWithConn(func: RunFunction) {
+    @Transactional({
+        connectionName: () => scope.get('connections').pop(),
+        propagation: Propagation.NESTED,
+    })
+    static async runWithConnection(func: RunFunction) {
         await func();
         // Once the function has run, we throw an exception to ensure that the
         // transaction rolls back.
@@ -68,12 +80,15 @@ class TransactionCreator {
         );
     }
 
-    static async runWithConns(func: RunFunction) {
-        let connections: string[] = scope.get('connections');
-        if(connections.length != 0) {
-            await TransactionCreator.runWithConn(async () => await TransactionCreator.runWithConns(func));
+    static async runWithMultipleConnections(func: RunFunction) {
+        const connections: string[] = scope.get('connections') || [];
+        if (connections.length != 0) {
+            await TransactionCreator.runWithConnection(
+                async () =>
+                    await TransactionCreator.runWithMultipleConnections(func),
+            );
         } else {
-            await TransactionCreator.runWithConn(func);
+            await TransactionCreator.runWithConnection(func);
         }
     }
 }
