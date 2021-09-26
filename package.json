@@ -21,7 +21,8 @@
         "test",
         "rollback",
         "wrapper",
-        "closure"
+        "closure",
+        "typescript"
     ],
     "author": "Kerren Ortlepp <kerren@entrostat.com>",
     "license": "MIT",
