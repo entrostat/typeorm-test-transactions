@@ -32,9 +32,9 @@
     },
     "homepage": "https://github.com/entrostat/typeorm-test-transactions#readme",
     "devDependencies": {
-        "@types/jest": "^27.0.1",
-        "@types/node": "^16.9.2",
-        "jest": "^27.2.0",
+        "@types/jest": "^27.0.2",
+        "@types/node": "^16.10.1",
+        "jest": "^27.2.2",
         "mysql": "^2.18.1",
         "pg": "^8.7.1",
         "prettier": "^2.4.1",
