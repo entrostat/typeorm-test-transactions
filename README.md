@@ -1,11 +1,15 @@
 # TypeORM Test Transactions
 
+
 [![NPM](https://nodei.co/npm/typeorm-test-transactions.png)](https://nodei.co/npm/typeorm-test-transactions/)
 
-[![GitHub version](https://badge.fury.io/gh/entrostat%2Ftypeorm-test-transactions.svg)](https://badge.fury.io/gh/entrostat%2Ftypeorm-test-transactions)
-[![npm version](https://badge.fury.io/js/typeorm-test-transactions.svg)](https://badge.fury.io/js/typeorm-test-transactions)
-<a href="https://github.com/entrostat/typeorm-test-transactions/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/entrostat/typeorm-test-transactions"></a>
+
+[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg?style=for-the-badge)](https://oclif.io)
+[![Version](https://img.shields.io/npm/v/typeorm-test-transactions.svg?style=for-the-badge)](https://npmjs.org/package/typeorm-test-transactions)
+[![Downloads/week](https://img.shields.io/npm/dw/typeorm-test-transactions.svg?style=for-the-badge)](https://npmjs.org/package/typeorm-test-transactions)
+[![License](https://img.shields.io/npm/l/typeorm-test-transactions.svg?style=for-the-badge)](https://github.com/entrostat/typeorm-test-transactions/blob/master/package.json)
 ![Build Status](https://github.com/entrostat/typeorm-test-transactions/actions/workflows/unit-tests.yaml/badge.svg)
+
 
 Have you wanted to run tests on a project that uses TypeORM directly on the database and in parallel? A lot of the time we can't do this because artefacts and data from other tests can affect the result of our current tests. What usually happens, in this case, is that our tests become quite complicated when database entities are involved because we need to track exact entities. Our `count()` and other aggregations must have `where` clauses so that we don't see results from other tests that have already completed.
 
