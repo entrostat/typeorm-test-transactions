@@ -9,7 +9,7 @@
         "test": "jest --forceExit",
         "build": "rimraf dist && tsc",
         "prepublish": "npm run build",
-        "release": "entro-version --during-release-post-hook=\"npm publish && git commit -am 'Updated the readme'\""
+        "release": "entro-version --during-release-post-hook=\"npm publish\""
     },
     "repository": {
         "type": "git",
