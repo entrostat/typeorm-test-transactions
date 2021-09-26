@@ -9,16 +9,14 @@ All notable changes to this project will be documented in this file. See [standa
 
 * **build:** The build is working correctly, using entro-version to run a release ([0a6b0c2](https://github.com/entrostat/typeorm-test-transactions/commit/0a6b0c2e410bb2847edffe70c64654b9fd7b3b28))
 * **versioning:** Added entro-version to the project ([e5fd464](https://github.com/entrostat/typeorm-test-transactions/commit/e5fd4646b4a0d057ccb363e5f85c873d5ef94606))
-* **versioning:** Don't commit the readme update for now ([6ee520f](https://github.com/entrostat/typeorm-test-transactions/commit/6ee520f9db639b80c4a3a0bae20596efede27902))
+
 
 
 ### Bug Fixes
 
-* **build:** Bump the version up for a successful build ([a4138fa](https://github.com/entrostat/typeorm-test-transactions/commit/a4138fa7ec69ef98e526040325a7a61a918d4871))
-* **build:** Bumping the version up for the build using entro-version ([7689dd0](https://github.com/entrostat/typeorm-test-transactions/commit/7689dd0eb2920679a32e2c27f167cbf93f30d910))
 * **build:** Don't checkout master before publishing because of entro-version ([34f1c6a](https://github.com/entrostat/typeorm-test-transactions/commit/34f1c6a6418d4e7eed2b75f20fc71d4d2ee5c6b2))
 * **keywords:** Added typescript to the keywords ([7316cf3](https://github.com/entrostat/typeorm-test-transactions/commit/7316cf3e09229dcfc21faebc5dfd6e327a2eee40))
-* **versioning:** Bumping the version before the build ([8087c24](https://github.com/entrostat/typeorm-test-transactions/commit/8087c240b8b1945aa216ce66b94f3ccf9f1a5d73))
+
 
 ## [3.0.0](https://github.com/entrostat/typeorm-test-transactions/compare/v2.0.0...v3.0.0) (2021-09-18)
 
