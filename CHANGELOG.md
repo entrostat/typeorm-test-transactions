@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.6.1](https://github.com/entrostat/typeorm-test-transactions/compare/v3.6.0...v3.6.1) (2021-09-26)
+
+
+### Bug Fixes
+
+* **changelog:** Removed the useless entries in the changelog after fixing entro-version ([2bfce8a](https://github.com/entrostat/typeorm-test-transactions/commit/2bfce8aeae302ce3b4ac9eb1cf3fcf81c0c8d4c6))
+
 ## [3.6.0](https://github.com/entrostat/typeorm-test-transactions/compare/v3.0.0...v3.6.0) (2021-09-26)
 
 
